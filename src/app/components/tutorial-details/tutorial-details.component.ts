@@ -72,6 +72,11 @@ export class TutorialDetailsComponent implements OnInit {
 
   updateTutorial(): void {
     this.message = '';
+    if(this.currentTutorial.title=="" || this.currentTutorial.description==""){
+      idB: this.currentTutorial.id;
+      this.toastr.error("Cannot be empty");
+      this.router.navigate(['/tutorials/${idB}']);
+    }else{
 
     this.tutorialService.update(this.currentTutorial.id, this.currentTutorial)
       .subscribe({
@@ -81,6 +86,7 @@ export class TutorialDetailsComponent implements OnInit {
         },
         error: (e) => console.error(e)
       });
+    }
   }
 
   deleteTutorial(): void {

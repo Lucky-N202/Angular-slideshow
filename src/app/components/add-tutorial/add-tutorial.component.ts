@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Tutorial } from 'src/app/models/tutorial.model';
 import { TutorialService } from 'src/app/services/tutorial.service';
@@ -18,7 +19,7 @@ export class AddTutorialComponent implements OnInit {
   };
   submitted = false;
 
-  constructor(private tutorialService: TutorialService, private toastr: ToastrService) { }
+  constructor(private tutorialService: TutorialService, private toastr: ToastrService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +31,12 @@ export class AddTutorialComponent implements OnInit {
       title: this.tutorial.title,
       description: this.tutorial.description
     };
-
+   if(data.title=="" || data.description=="")
+   {
+    this.toastr.error("Cannot be empty");
+    this.router.navigate(['/add']);
+    
+   }else{
     this.tutorialService.create(data)
     .subscribe(
       {
@@ -44,6 +50,7 @@ export class AddTutorialComponent implements OnInit {
         error: (e) => console.error(e)
       }
     );
+   }
   }
 
   // newTutorial(): void

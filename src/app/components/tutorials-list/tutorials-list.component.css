@@ -12,6 +12,19 @@
     padding-top: 2rem;
 
   }
+
+  body{
+    display:flow-root,inline-block;
+    padding: 145px;
+    align-items:stretch;
+    background-size:  100%;
+    margin-left:-22%;
+    
+    margin-right: -14.9%;
+    margin-top: -2%;
+    margin-bottom: 5%;
+    
+  }
   
   .btn{
     margin-right: 10px;

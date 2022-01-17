@@ -1,3 +1,5 @@
+<body>
+
 <div *ngIf="viewMode; else editable">
     <div *ngIf="currentTutorial.id">
       <h4>Tutorial</h4>
@@ -60,6 +62,15 @@
         </div>
       </form>
   
+      <button 
+      routerLink="/tutorials"
+      type="submit"
+      class="btn btn-md btn-info"
+      style="margin-right:.2rem;"
+      
+    >
+      Go Back
+    </button>
       <button
         class="btn btn-md btn-danger"
         *ngIf="currentTutorial.published"
@@ -67,6 +78,7 @@
       >
         Go Offline
       </button>
+
       <button
         *ngIf="!currentTutorial.published"
         class="btn btn-md btn-success"
@@ -75,9 +87,6 @@
         Go Online
       </button>
   
-      <!-- <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
-        Delete
-      </button> -->
   
       <button *ngIf="!currentTutorial.title || currentTutorial.published"
         type="submit"
@@ -87,6 +96,8 @@
       >
         Update
       </button>
+
+
       <p>{{ message }}</p>
     </div>
   
@@ -95,3 +106,13 @@
       <p>Cannot access this Tutorial...</p>
     </div>
   </ng-template>
+
+</body>  
+
+<footer class=" text-center position" id="footer">
+  <!-- <div class="container"> -->
+    <div class="details">
+      <p class="lead">Brought to you by the Spaza Developers &copy; 2022</p>
+    </div>
+  <!-- </div> -->
+</footer>

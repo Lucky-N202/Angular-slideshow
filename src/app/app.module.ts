@@ -12,6 +12,9 @@ import { HttpClientModule} from '@angular/common/http';
 import { ButtonDeleteComponent } from './components/button-delete/button-delete.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from '../app/components/login/login.component';
+import { RegisterComponent } from '../app/components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddTutorialComponent,
     TutorialDetailsComponent,
     TutorialsListComponent,
-    ButtonDeleteComponent
+    ButtonDeleteComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(), // ToastrModule added
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
